@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Wedding",
+    "location": "Mitte",
+    "dienstleister": "122284"
+  },
+  {
+    "name": "Rathaus Tiergarten",
+    "location": "Mitte",
+    "dienstleister": "122282"
+  },
+  {
+    "name": "Helle Mitte",
+    "location": "Marzahn - Hellersdorf",
+    "dienstleister": "122273"
+  },
+  {
+    "name": "1 Yorckstr.",
+    "location": "Friedrichshain - Kreuzberg",
+    "dienstleister": "122231"
+  },
+  {
+    "name": "2.0 Schlesische Str",
+    "location": "Friedrichshain - Kreuzberg",
+    "dienstleister": "122238"
+  },
+  {
+    "name": "3 Frankfurter Allee",
+    "location": "Friedrichshain - Kreuzberg",
+    "dienstleister": "122243"
+  },
+  {
+    "name": "2 Normannenstr",
+    "location": "Lichtenberg",
+    "dienstleister": "122260"
+  }
+]
