@@ -2,6 +2,7 @@
   "name": "burgeramt",
   "version": "0.1.0",
   "dependencies": {
+    "phantomjs": "^1.9.18",
     "selenium-webdriver": "2.47",
     "twilio": "^2.5.2"
   }

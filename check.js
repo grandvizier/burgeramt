@@ -7,13 +7,17 @@ var baseUrl = 'https://service.berlin.de/terminvereinbarung/termin/tag.php?termi
 var path = '.calendar-table .row-fluid td.buchbar';
 
 var driver = new webdriver.Builder().
+   usingServer('http://127.0.0.1:4444/wd/hub').
    withCapabilities(webdriver.Capabilities.firefox()).
    build();
 
+console.log('------');
+console.log(new Date());
 for (var i = 0; i < sites.length; i++) {
     var url = baseUrl + sites[i].dienstleister;
     checkSite(url, sites[i].name);
 };
+console.log('');
 
 driver.quit();
 
@@ -21,16 +25,16 @@ driver.quit();
 function checkSite(siteUrl, name){
     driver.get(siteUrl);
     driver.findElements(webdriver.By.css(path)).then(function(elements) {
+      var msg = name + " has " + elements.length + " openings";
+      console.log(msg);
       if (elements.length > 0){
-          sendSMS(siteUrl, name, elements.length);
+          sendSMS(siteUrl, msg);
       }
     });
 }
 
-function sendSMS(url, name, openings){
+function sendSMS(url, msg){
     var lb = "\n";
-    var msg = name + " has " + openings + " openings";
-    console.log(msg);
     msg = lb + "site: " + lb + url + lb + lb + msg;
 
     twilio.sendMessage({
