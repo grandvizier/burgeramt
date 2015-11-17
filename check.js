@@ -8,7 +8,7 @@ var path = '.calendar-table .row-fluid td.buchbar';
 
 var driver = new webdriver.Builder().
    usingServer('http://127.0.0.1:4444/wd/hub').
-   withCapabilities(webdriver.Capabilities.firefox()).
+   withCapabilities(webdriver.Capabilities.phantomjs()).
    build();
 
 console.log('------');
