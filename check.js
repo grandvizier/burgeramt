@@ -5,6 +5,7 @@ var twilio = require('twilio')(auth.AccountSID, auth.AuthToken);
 
 var baseUrl = 'https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&anliegen%5B%5D=120686&dienstleister=';
 var path = '.calendar-table .row-fluid td.buchbar';
+var noAppointments = '.calendar-table .row-fluid td.nichtbuchbar';
 var monthXPath = '../../parent::table/thead//th[@class="month"]';
 
 var driver = new webdriver.Builder().
@@ -28,6 +29,14 @@ function checkSite(siteUrl, name){
     var msg = name + " has ";
     var openings = 0;
     var days = '';
+    driver.findElements(webdriver.By.css(noAppointments)).then(function(full) {
+        if (full.length == 0){
+            driver.findElement(webdriver.By.css('body')).getText().then(function(reason) {
+                console.log(name + ' unavailable: ', reason);
+                exit();
+            });
+        }
+    });
     driver.findElements(webdriver.By.css(path)).then(function(elements) {
         openings = elements.length;
         msg += openings + " openings";
@@ -73,4 +82,10 @@ function sendSMS(url, msg){
         }
 
     });
+}
+
+function exit(){
+    console.log('--Exiting early--');
+    driver.quit();
+    process.exit();
 }
