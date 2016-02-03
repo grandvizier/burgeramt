@@ -3,7 +3,11 @@ var sites = require('./sites.json');
 var auth = require('./auth.json');
 var twilio = require('twilio')(auth.AccountSID, auth.AuthToken);
 
-var baseUrl = 'https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&anliegen%5B%5D=120686&dienstleister=';
+var termin_types = {
+    'fahrerlaubnis': '121598',
+    'wohnung': '120686'
+}
+var baseUrl = 'https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=';
 var path = '.calendar-table .row-fluid td.buchbar';
 var noAppointments = '.calendar-table .row-fluid td.nichtbuchbar';
 var monthXPath = '../../parent::table/thead//th[@class="month"]';
@@ -16,7 +20,7 @@ var driver = new webdriver.Builder().
 console.log('------');
 console.log(new Date());
 for (var i = 0; i < sites.length; i++) {
-    var url = baseUrl + sites[i].dienstleister;
+    var url = baseUrl + sites[i].dienstleister + "&anliegen%5B%5D=" + termin_types['fahrerlaubnis'];
     checkSite(url, sites[i].name);
 };
 console.log('');
