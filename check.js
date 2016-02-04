@@ -54,11 +54,11 @@ function checkSite(siteUrl, name){
         if (openings > 0){
             console.log('Found openings for ', name, openings);
             for (var i = 0; i < openings; i++) {
+                elements[i].findElement(webdriver.By.xpath(monthXPath)).getText().then(function(m) {
+                   days += m.substring(0,3) + ' ';
+                }, errHandling);
                 elements[i].getText().then(function(d) {
                     days += d + "\n";
-                    // elements[i].findElement(webdriver.By.xpath(monthXPath)).getText().then(function(m) {
-                    //    days += m.substring(0,3) + ' ' + d + "\n";
-                    // }, errHandling);
                 }, errHandling);
                 if (i > 3){
                     break;
