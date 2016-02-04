@@ -55,9 +55,10 @@ function checkSite(siteUrl, name){
             console.log('Found openings for ', name, openings);
             for (var i = 0; i < openings; i++) {
                 elements[i].getText().then(function(d) {
-                    elements[i].findElement(webdriver.By.xpath(monthXPath)).getText().then(function(m) {
-                        days += m.substring(0,3) + ' ' + d + "\n";
-                    }, errHandling);
+                    days += d + "\n";
+                    // elements[i].findElement(webdriver.By.xpath(monthXPath)).getText().then(function(m) {
+                    //    days += m.substring(0,3) + ' ' + d + "\n";
+                    // }, errHandling);
                 }, errHandling);
                 if (i > 3){
                     break;
