@@ -7,6 +7,11 @@ var termin_types = {
     'fahrerlaubnis': '121598',
     'wohnung': '120686'
 }
+var acceptable_dates = {
+    'Feb': 29,
+    'Mär': 17
+}
+
 var baseUrl = 'https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=';
 var path = '.calendar-table .row-fluid td.buchbar';
 var noAppointments = '.calendar-table .row-fluid td.nichtbuchbar';
@@ -55,10 +60,12 @@ function checkSite(siteUrl, name){
             console.log('Found openings for ', name, openings);
             for (var i = 0; i < openings; i++) {
                 elements[i].findElement(webdriver.By.xpath(monthXPath)).getText().then(function(m) {
-                   days += m.substring(0,3) + ' ';
+                   month = m.substring(0,3);
                 }, errHandling);
                 elements[i].getText().then(function(d) {
-                    days += d + "\n";
+                    if (d <= acceptable_dates[month]) {
+                        days += month + ' ' + d + "\n";
+                    }
                 }, errHandling);
                 if (i > 3){
                     break;
