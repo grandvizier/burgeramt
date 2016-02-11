@@ -81,6 +81,7 @@ function checkSite(siteUrl, name){
             }, errHandling)
         }
     }).then(function(){
+        // TODO need to also check if the days are acceptable
         if (openings > 0) {
             msg += ' on: ' + days;
             sendSMS(siteUrl, msg);
