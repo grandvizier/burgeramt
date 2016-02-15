@@ -1,5 +1,10 @@
 [
   {
+    "name": "Wedding",
+    "location": "Mitte",
+    "dienstleister": "122284"
+  },
+  {
     "name": "Rathaus Tiergarten",
     "location": "Mitte",
     "dienstleister": "122282"
@@ -10,18 +15,23 @@
     "dienstleister": "122281"
   },
   {
+    "name": "Heerstraße",
+    "location": "Charlottenburg",
+    "dienstleister": "122217"
+  },
+  {
     "name": "1 Yorckstr.",
     "location": "Friedrichshain - Kreuzberg",
     "dienstleister": "122231"
   },
   {
-    "name": "2.0 Schlesische Str",
-    "location": "Friedrichshain - Kreuzberg",
-    "dienstleister": "122238"
-  },
-  {
     "name": "Prenzlauer Berg",
     "location": "Pankow",
     "dienstleister": "122297"
+  },
+  {
+    "name": "2.0 Schlesische Str",
+    "location": "Friedrichshain - Kreuzberg",
+    "dienstleister": "122238"
   }
 ]

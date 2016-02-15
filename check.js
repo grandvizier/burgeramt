@@ -42,7 +42,10 @@ function checkSite(siteUrl, name){
     driver.findElements(webdriver.By.css(noAppointments)).then(function(full) {
         if (full.length == 0){
             driver.findElement(webdriver.By.css('body')).getText().then(function(reason) {
-                if (reason.indexOf("Bitte wählen Sie ein Datum") < 0) {
+                if (reason.indexOf("Es gibt keinen Standort, der alle ausgewählten Dienstleistungen anbietet.") > 0) {
+                    console.log('No openings for: ', name);
+                    return;
+                } else if (reason.indexOf("Bitte wählen Sie ein Datum") < 0) {
                     console.log(name + ' unavailable: ', reason.substring(0,150));
                     exit();
                 }
