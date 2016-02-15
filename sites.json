@@ -1,10 +1,5 @@
 [
   {
-    "name": "Wedding",
-    "location": "Mitte",
-    "dienstleister": "122284"
-  },
-  {
     "name": "Rathaus Tiergarten",
     "location": "Mitte",
     "dienstleister": "122282"
@@ -13,11 +8,6 @@
     "name": "Rathaus Spandau",
     "location": "Spandau",
     "dienstleister": "122281"
-  },
-  {
-    "name": "Heerstraße",
-    "location": "Charlottenburg",
-    "dienstleister": "122217"
   },
   {
     "name": "1 Yorckstr.",
