@@ -76,12 +76,13 @@ function checkSite(siteUrl, name){
             }
         } else {
             // check `next` month
-            driver.findElements(webdriver.By.css(nextMonthPath)).then(function(links) {
-                links[links.length - 1].click();
-            }, errHandling);
-            driver.findElements(webdriver.By.css(path)).then(function(newElements) {
-                openings = elements.length;
-            }, errHandling)
+            // FOR NOW, `NEXT` MONTH ISN'T IMPORTANT
+            // driver.findElements(webdriver.By.css(nextMonthPath)).then(function(links) {
+            //     links[links.length - 1].click();
+            // }, errHandling);
+            // driver.findElements(webdriver.By.css(path)).then(function(newElements) {
+            //     openings = elements.length;
+            // }, errHandling)
         }
     }).then(function(){
         // TODO need to also check if the days are acceptable
