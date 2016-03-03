@@ -26,7 +26,7 @@ var driver = new webdriver.Builder().
 console.log('------');
 console.log(new Date());
 for (var i = 0; i < sites.length; i++) {
-    var url = baseUrl + sites[i].dienstleister + "&anliegen%5B%5D=" + termin_types['wohnung'];
+    var url = baseUrl + sites[i].dienstleister + "&anliegen%5B%5D=" + termin_types['fahrerlaubnis'];
     checkSite(url, sites[i].name);
 };
 console.log('');

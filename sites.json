@@ -5,19 +5,19 @@
     "dienstleister": "122284"
   },
   {
-    "name": "Rathaus Tiergarten",
+    "name": "Frankfurter Allee",
+    "location": "Friedrichshain",
+    "dienstleister": "122243"
+  },
+  {
+    "name": "Rathaus Mitte",
     "location": "Mitte",
-    "dienstleister": "122282"
+    "dienstleister": "122280"
   },
   {
-    "name": "Rathaus Spandau",
-    "location": "Spandau",
-    "dienstleister": "122281"
-  },
-  {
-    "name": "Heerstraße",
-    "location": "Charlottenburg",
-    "dienstleister": "122217"
+    "name": "(Lichtenberg) Normannenstr.",
+    "location": "Lichtenberg",
+    "dienstleister": "122260"
   },
   {
     "name": "1 Yorckstr.",
