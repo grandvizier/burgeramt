@@ -8,8 +8,8 @@ var termin_types = {
     'wohnung': '120686'
 }
 var acceptable_dates = {
-    'Feb': 29,
-    'Mär': 17
+    'Mär': 31
+    'Apr': 30,
 }
 
 var baseUrl = 'https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=';
@@ -78,6 +78,7 @@ function checkSite(siteUrl, name){
             // check `next` month
             // FOR NOW, `NEXT` MONTH ISN'T IMPORTANT
             // driver.findElements(webdriver.By.css(nextMonthPath)).then(function(links) {
+            //     put this in a try/catch???
             //     links[links.length - 1].click();
             // }, errHandling);
             // driver.findElements(webdriver.By.css(path)).then(function(newElements) {
