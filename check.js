@@ -8,8 +8,8 @@ var termin_types = {
     'wohnung': '120686'
 }
 var acceptable_dates = {
-    'Mär': 31
-    'Apr': 30,
+    'Mär': 31,
+    'Apr': 30
 }
 
 var baseUrl = 'https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=';
