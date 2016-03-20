@@ -5,12 +5,18 @@ var twilio = require('twilio')(auth.AccountSID, auth.AuthToken);
 
 var termin_types = {
     'fahrerlaubnis': '121598',
-    'wohnung': '120686'
+    'wohnung': '120686',
+    'ersatzführerschein': '121593'
 }
 var acceptable_dates = {
     'Mär': 31,
     'Apr': 30
 }
+
+/*
+Places:
+    https://service.berlin.de/standorte/buergeraemter/
+*/
 
 var baseUrl = 'https://service.berlin.de/terminvereinbarung/termin/tag.php?termin=1&dienstleister=';
 var path = '.calendar-table .row-fluid td.buchbar';
@@ -26,7 +32,7 @@ var driver = new webdriver.Builder().
 console.log('------');
 console.log(new Date());
 for (var i = 0; i < sites.length; i++) {
-    var url = baseUrl + sites[i].dienstleister + "&anliegen%5B%5D=" + termin_types['fahrerlaubnis'];
+    var url = baseUrl + sites[i].dienstleister + "&anliegen%5B%5D=" + termin_types['ersatzführerschein'];
     checkSite(url, sites[i].name);
 };
 console.log('');
