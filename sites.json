@@ -5,33 +5,23 @@
     "dienstleister": "122284"
   },
   {
+    "name": "Frankfurter Allee",
+    "location": "Friedrichshain",
+    "dienstleister": "122243"
+  },
+  {
     "name": "Rathaus Mitte",
     "location": "Mitte",
     "dienstleister": "122280"
   },
   {
-    "name": "1 Yorckstr.",
-    "location": "Friedrichshain - Kreuzberg",
-    "dienstleister": "122231"
+    "name": "Prenzlauer Berg",
+    "location": "Pankow",
+    "dienstleister": "122297"
   },
   {
-    "name": "Steglitz",
-    "location": "Steglitz-Zehlendorf",
-    "dienstleister": "122274"
-  },
-  {
-    "name": "Schöneberg",
-    "location": "Tempelhof-Schöneberg",
-    "dienstleister": "122251"
-  },
-  {
-    "name": "Hohenzollerndamm",
-    "location": "Charlottenburg - Wilmersdorf",
-    "dienstleister": "122219"
-  },
-  {
-    "name": "Wilmersdorfer",
-    "location": "Charlottenburg - Wilmersdorf",
-    "dienstleister": "122227"
+    "name": "Pankow",
+    "location": "Pankow",
+    "dienstleister": "122301"
   }
 ]

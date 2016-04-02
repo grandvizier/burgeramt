@@ -6,11 +6,12 @@ var twilio = require('twilio')(auth.AccountSID, auth.AuthToken);
 var termin_types = {
     'fahrerlaubnis': '121598',
     'wohnung': '120686',
-    'ersatzführerschein': '121593'
+    'ersatzführerschein': '121593',
+    'neue-fahrerlaubnis': '121637'
 }
 var acceptable_dates = {
-    'Mär': 31,
-    'Apr': 30
+    'Apr': 30,
+    'Mai': 31
 }
 
 /*
@@ -32,7 +33,7 @@ var driver = new webdriver.Builder().
 console.log('------');
 console.log(new Date());
 for (var i = 0; i < sites.length; i++) {
-    var url = baseUrl + sites[i].dienstleister + "&anliegen%5B%5D=" + termin_types['ersatzführerschein'];
+    var url = baseUrl + sites[i].dienstleister + "&anliegen%5B%5D=" + termin_types['neue-fahrerlaubnis'];
     checkSite(url, sites[i].name);
 };
 console.log('');
@@ -81,14 +82,14 @@ function checkSite(siteUrl, name){
                 }
             }
         } else {
-            // check `next` month
-            // FOR NOW, `NEXT` MONTH ISN'T IMPORTANT
+            // // check `next` month
+            // // FOR NOW, `NEXT` MONTH ISN'T IMPORTANT
             // driver.findElements(webdriver.By.css(nextMonthPath)).then(function(links) {
-            //     put this in a try/catch???
+            //     // put this in a try/catch???
             //     links[links.length - 1].click();
             // }, errHandling);
             // driver.findElements(webdriver.By.css(path)).then(function(newElements) {
-            //     openings = elements.length;
+            //     openings = newElements.length;
             // }, errHandling)
         }
     }).then(function(){
